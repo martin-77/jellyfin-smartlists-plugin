@@ -1,0 +1,21 @@
+[
+  {
+    "guid": "A0A2A7B2-747A-4113-8B39-757A9D267C79",
+    "name": "SmartLists",
+    "description": "Create smart, rule-based playlists and collections in Jellyfin. Includes native per-user Rating rules.",
+    "overview": "SmartLists with native user rating support.",
+    "owner": "martin-77",
+    "category": "General",
+    "imageUrl": "https://raw.githubusercontent.com/martin-77/jellyfin-smartlists-plugin/main/images/logo.jpg",
+    "versions": [
+      {
+        "version": "12.0.0.1601",
+        "changelog": "Add native per-user UserData.Rating as a numeric SmartLists rule field.",
+        "targetAbi": "12.0.0",
+        "sourceUrl": "https://raw.githubusercontent.com/martin-77/jellyfin-smartlists-plugin/jellyfin-repo/Jellyfin.Plugin.SmartLists_12.0.0.1601_12.0.0.zip",
+        "checksum": "74AD586FC948087F5606F64A219E1E82",
+        "timestamp": "2026-08-16"
+      }
+    ]
+  }
+]
