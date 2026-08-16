@@ -936,6 +936,7 @@ namespace Jellyfin.Plugin.SmartLists.Core.QueryEngine
         {
             operand.PlaybackStatusByUser[userId] = playbackStatus;
             operand.PlayCountByUser[userId] = playbackStatus == "Played" ? 1 : 0;
+            operand.RatingByUser[userId] = 0;
             operand.IsFavoriteByUser[userId] = false;
             operand.LastPlayedDateByUser[userId] = -1; // Never played,
         }
@@ -1260,6 +1261,35 @@ namespace Jellyfin.Plugin.SmartLists.Core.QueryEngine
                 {
                     operand.PlayCountByUser[userId] = 0;
                 }
+            }
+
+            // Extract Rating
+            var ratingProp = userDataType.GetProperty("Rating");
+            if (ratingProp != null)
+            {
+                var ratingValue = ratingProp.GetValue(userData);
+                try
+                {
+                    operand.RatingByUser[userId] = ratingValue == null
+                        ? 0
+                        : Convert.ToDouble(ratingValue, System.Globalization.CultureInfo.InvariantCulture);
+                }
+                catch (FormatException)
+                {
+                    operand.RatingByUser[userId] = 0;
+                }
+                catch (InvalidCastException)
+                {
+                    operand.RatingByUser[userId] = 0;
+                }
+                catch (OverflowException)
+                {
+                    operand.RatingByUser[userId] = 0;
+                }
+            }
+            else
+            {
+                operand.RatingByUser[userId] = 0;
             }
 
             // Extract IsFavorite
