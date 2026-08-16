@@ -9,6 +9,14 @@
     "imageUrl": "https://raw.githubusercontent.com/martin-77/jellyfin-smartlists-plugin/main/images/logo.jpg",
     "versions": [
       {
+        "version": "12.0.0.1602",
+        "changelog": "Fix numeric comparisons for native per-user Rating rules.",
+        "targetAbi": "12.0.0",
+        "sourceUrl": "https://raw.githubusercontent.com/martin-77/jellyfin-smartlists-plugin/jellyfin-repo/Jellyfin.Plugin.SmartLists_12.0.0.1602_12.0.0.zip",
+        "checksum": "23AEAA6B354D525C0137F735DFF59998",
+        "timestamp": "2026-08-16"
+      },
+      {
         "version": "12.0.0.1601",
         "changelog": "Add native per-user UserData.Rating as a numeric SmartLists rule field.",
         "targetAbi": "12.0.0",
